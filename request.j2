@@ -1,0 +1,29 @@
+<HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="{{ test_name }}" enabled="true">
+  <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+    <collectionProp name="Arguments.arguments">
+    {% for a in arguments %}
+      {{ a }}
+    {% endfor %}
+      <elementProp name="" elementType="HTTPArgument">
+        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+        <stringProp name="Argument.value"></stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+        <boolProp name="HTTPArgument.use_equals">true</boolProp>
+      </elementProp>
+    </collectionProp>
+  </elementProp>
+  <stringProp name="HTTPSampler.domain">{{ host }}</stringProp>
+  <stringProp name="HTTPSampler.port"></stringProp>
+  <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+  <stringProp name="HTTPSampler.response_timeout"></stringProp>
+  <stringProp name="HTTPSampler.protocol"></stringProp>
+  <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+  <stringProp name="HTTPSampler.path">{{ path }}</stringProp>
+  <stringProp name="HTTPSampler.method">GET</stringProp>
+  <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+  <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+  <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+  <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+  <boolProp name="HTTPSampler.monitor">false</boolProp>
+  <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+</HTTPSamplerProxy>
